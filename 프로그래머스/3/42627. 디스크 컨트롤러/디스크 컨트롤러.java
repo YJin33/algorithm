@@ -9,7 +9,7 @@ class Solution {
             } 
             return Integer.compare(a.useTime, b.useTime);
         });
-        Arrays.sort(jobs , (a,b) -> a[0]-b[0]);
+        Arrays.sort(jobs , (a,b) -> a[0]-b[0]); // 작업을 시간 순으로 정렬
 
         int answer = 0;
         int now = jobs[0][0];
@@ -25,7 +25,7 @@ class Solution {
                 pq.add(pair1);
                 i++;
             }
-            if(pq.isEmpty()){
+            if(pq.isEmpty()){ //디스크 쉬는시간 -> 다음 작업 들어오는 시간으로
                 now = jobs[i][0];
                 continue;
             }
